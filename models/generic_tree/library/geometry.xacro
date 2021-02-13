@@ -1,0 +1,71 @@
+<?xml version="1.0" ?>
+<sdf version="1.7" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+	<xacro:macro name="cylinder_" params="r l name x y">
+		<pose>${x} ${y} ${l/2} 0 0 0</pose>
+		<visual name="visual_${name}">
+			<cast_shadows>1</cast_shadows>
+			<geometry>
+				<cylinder>
+					<radius>${r}</radius>
+					<length>${l}</length>
+				</cylinder>
+			</geometry>
+		</visual>
+		<collision name="collision_${name}">
+			<laser_retro>1</laser_retro>
+			<geometry>
+				<cylinder>
+					<radius>${r}</radius>
+					<length>${l}</length>
+				</cylinder>
+			</geometry>
+		</collision>
+		</xacro:macro>
+		<xacro:macro name="sphere_" params="r name x y z">
+			<pose>${x} ${y} ${z+r/2} 0 0 0</pose>
+		<visual name="visual_${name}">
+			<cast_shadows>1</cast_shadows>
+			<geometry>
+				<sphere>
+					<radius>${r}</radius>
+				</sphere>
+			</geometry>
+		</visual>
+		<collision name="collision_${name}">
+			<laser_retro>1</laser_retro>
+			<geometry>
+				<sphere>
+					<radius>${r}</radius>
+				</sphere>
+			</geometry>
+		</collision>
+	</xacro:macro>
+	<xacro:macro name="sexy_t">
+		<pose>0 0 0 0 0 0</pose>
+		<link name="sexy_t_link">
+			<visual name="visual">
+				<geometry>
+					<mesh>
+						<uri>file://$(cwd)/meshes/sexy_tree.dae</uri>
+					</mesh>
+				</geometry>	
+			</visual>
+			<collision name="colission">
+				<geometry>
+					<mesh>
+						<uri>file://$(cwd)/meshes/sexy_tree.dae</uri>
+					</mesh>
+				</geometry>	
+			</collision>
+		</link>
+	</xacro:macro>
+	<xacro:macro name="spheric_tree_" params="rT rC h name">
+		<link name="generic_tree_trunk_link">
+			<xacro:cylinder_ r="${rT}" l="${h}" name="${name}" x="0" y="0" />
+		</link>
+		<link name="generic_tree_trunk_crown">
+			<xacro:sphere_ r="${rC}" name="${name}" x="0" y="0" z="${h}" />
+		</link>
+	</xacro:macro>
+
+</sdf>

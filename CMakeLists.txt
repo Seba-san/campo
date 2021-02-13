@@ -202,3 +202,10 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+######
+#Nuevo:
+# Se cargan las variables de trabajo para gazebo, fuente:
+#https://docs.ros.org/en/api/catkin/html/dev_guide/generated_cmake_api.html#catkin_add_env_hooks
+# Fuente 2:https://robotics.stackexchange.com/questions/16836/setting-custom-variables-on-catkin-workspace-environment
+#catkin_add_env_hooks(models_env bash SKIP_INSTALL DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/env_hooks)
+

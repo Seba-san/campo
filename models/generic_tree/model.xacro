@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<sdf version="1.7" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+	<xacro:include filename="./library/geometry.xacro"/>
+	<model name="generic_tree">
+		<!--	<xacro:spheric_tree_ rT="0.2" rC="1" h="1" name="0"/>	-->
+		<xacro:sexy_t /> 
+	</model>
+</sdf>
