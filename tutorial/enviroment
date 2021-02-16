@@ -1,0 +1,25 @@
+Para que gazebo levante los modelos particulares es necesario setear las variables de entorno:
+Acá hay un buen resumen: https://answers.gazebosim.org//question/12387/referencing-models-from-other-packages-launch-files/
+Pego la parte importante:
+
+Here is a tutorial that describes Gazebo's model format, and how to have one model depend on another model:
+
+http://gazebosim.org/tutorials?tut=mo...
+
+Here is a tutorial about making a model:
+
+http://gazebosim.org/tutorials?tut=bu...
+
+Here is the SDF specification:
+
+http://sdformat.org/spec
+
+Some other bits of info
+
+The package keyword is only used within ROS, and has no valid meaning in Gazebo.
+A URI that uses the file:// prefix must be either a full path, or reference a file that is in GAZEBO_RESOURCE_PATH
+You can use a model:// URI prefix, which will find files/models contained in GAZEBO_MODEL_PATH
+
+
+Esto es parte de la documentacion oficial:
+http://gazebosim.org/tutorials?tut=components&cat=get_started

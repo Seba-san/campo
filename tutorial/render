@@ -1,0 +1,7 @@
+Al parecer gazebo no genera las sombras autonameticamente, hay que darle una ayudita, ver:
+http://gazebosim.org/tutorials?tut=lightmap&cat=rendering
+
+Video interesante de creacion de arboles: 
+https://youtu.be/mGFGuL8bfdI
+Libreria que parece ideal: https://github.com/MaximeHerpin/modular_tree/tree/blender_28
+video explicativo:https://youtu.be/FoVg8rXdfQU
